@@ -33,6 +33,10 @@ select{
     padding-left: 20px;
 }
 
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
 i {
     cursor: pointer;
 }
