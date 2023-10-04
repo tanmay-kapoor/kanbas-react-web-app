@@ -1,0 +1,35 @@
+@media (min-width: 768px) {
+    .dashboard .course-card {
+        flex: 0 0 calc(max(100%/5   , 250px));
+    }  
+}
+
+.dashboard .card-title {
+    color : rgb(245, 179, 12);
+    font-size: 16px;
+}
+
+.card-container {
+    margin-left: -15px;
+}
+
+.course-card i {
+    font-size: 20px;
+    color: rgb(163, 160, 160);
+    padding: 15px;
+}
+
+.dashboard {
+    margin-left: 115px;
+}
+
+.dashboard .random-div {
+    margin-left: 15px;
+}
+
+.dashboard .course-card {
+    max-width: 270px;
+    padding: 0;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}

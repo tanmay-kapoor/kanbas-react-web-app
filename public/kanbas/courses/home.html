@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            rel="stylesheet"
+        />
+
+        <link type="text/css" rel="stylesheet" href="../index.css" />
+        <link type="text/css" rel="stylesheet" href="index.css" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light xs-nav d-md-none">
+            <button
+                class="navbar-toggler color-white mt-2 mb-2"
+                data-toggle="collapse"
+                data-target="#kanbas-navigation"
+            >
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <button
+                class="navbar-toggler d-lg-none color-white"
+                data-toggle="collapse"
+                data-target="#secondary-navigation"
+            >
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div
+                class="collapse navbar-collapse dropdown-navbar"
+                id="kanbas-navigation"
+            >
+                <ul clss="navbar-nav" style="padding-left: 0">
+                    <li>
+                        <a class="color-red" href="../profile/index.html">
+                            <i
+                                class="fa fa-user-circle mr-3 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            Account
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="../dashboard/index.html">
+                            <i
+                                class="fa fa-tachometer mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="home.html">
+                            <i class="fa fa-book mr-3" aria-hidden="true"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="#">
+                            <i class="fa fa-inbox mr-3" aria-hidden="true"></i>
+                            Inbox
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-calendar mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Calender</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-clock mr-3"></i> History</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-computer mr-3"></i> Studio</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-right-from-bracket mr-3"
+                                aria-hidden="true"
+                            ></i
+                            >Commons</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-question-circle mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Help</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                class="collapse navbar-collapse dropdown-navbar"
+                id="secondary-navigation"
+            >
+                <ul>
+                    <li>
+                        <a class="color-red" href="home.html"
+                            ><i class="fa-solid fa-house"></i> Home</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-network-wired"></i>Modules</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Piazza</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Zoom Meetings</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="assignments/index.html"
+                            ><i class="fa-regular fa-pen-to-square"></i
+                            >Assignments</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-rocket"></i>Quizzes</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="grades/grades.html"
+                            ><i class="fa-regular fa-address-book"></i>Grades</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-user-group"></i>People</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Panopto Video</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-comments"></i
+                            >Discussions</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-bullhorn"></i
+                            >Announcements</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-file"></i>Pages</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-folder"></i>Files</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-file-invoice"></i>Rubrics</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-bullseye"></i>Outcomes</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-circle"></i
+                            >Collaboration</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-file-lines"></i>Syllabus</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="settings/course-details.html"
+                            ><i class="fa-solid fa-gear"></i>Settings</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar d-none d-md-block">
+            <ul>
+                <li>
+                    <img
+                        src="../images/neu.png"
+                        style="max-width: 60px"
+                        alt="NEU-logo"
+                        class="neu-logo"
+                    />
+                </li>
+                <li>
+                    <a href="../profile/index.html">
+                        <i
+                            class="fa fa-user-circle nav-avatar"
+                            aria-hidden="true"
+                        ></i>
+                        Account
+                    </a>
+                </li>
+                <li>
+                    <a href="../dashboard/index.html">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="home.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        Courses
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-inbox" aria-hidden="true"></i>
+                        Inbox
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i class="fa fa-calendar" aria-hidden="true"></i
+                        >Calender</a
+                    >
+                </li>
+                <li>
+                    <a href="#"><i class="fa-regular fa-clock"></i>History</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-computer"></i>Studio</a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i
+                            class="fa fa-right-from-bracket"
+                            aria-hidden="true"
+                        ></i
+                        >Commons</a
+                    >
+                </li>
+                <li>
+                    <a href="#"
+                        ><i class="fa fa-question-circle" aria-hidden="true"></i
+                        >Help</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="container main centered">
+            <div class="row root">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars color-red"></i>
+                    <nav
+                        style="--bs-breadcrumb-divider: '>'"
+                        aria-label="breadcrumb"
+                        class="ms-4"
+                    >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a class="hover-underline color-red" href="#"
+                                    >CS5610.17367.202410</a
+                                >
+                            </li>
+                            <li
+                                class="breadcrumb-item black-text"
+                                aria-current="page"
+                            >
+                                Home
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <hr />
+
+                <div class="d-none d-md-block nav-2">
+                    <ul>
+                        <li class="active"><a href="home.html">Home</a></li>
+                        <li><a class="color-red" href="#">Modules</a></li>
+                        <li><a class="color-red" href="#">Piazza</a></li>
+                        <li><a class="color-red" href="#">Zoom Meetings</a></li>
+                        <li>
+                            <a class="color-red" href="assignments/index.html"
+                                >Assignments</a
+                            >
+                        </li>
+                        <li><a class="color-red" href="#">Quizzes</a></li>
+                        <li>
+                            <a class="color-red" href="grades/grades.html"
+                                >Grades</a
+                            >
+                        </li>
+                        <li><a class="color-red" href="#">People</a></li>
+                        <li><a class="color-red" href="#">Panopto Video</a></li>
+                        <li><a class="color-red" href="#">Discussions</a></li>
+                        <li><a class="color-red" href="#">Announcements</a></li>
+                        <li><a class="color-red" href="#">Pages</a></li>
+                        <li><a class="color-red" href="#">Files</a></li>
+                        <li><a class="color-red" href="#">Rubrics</a></li>
+                        <li><a class="color-red" href="#">Outcomes</a></li>
+                        <li><a class="color-red" href="#">Collaboration</a></li>
+                        <li><a class="color-red" href="#">Syllabus</a></li>
+                        <li>
+                            <a
+                                class="color-red"
+                                href="settings/course-details.html"
+                                >Settings</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+                    <div class="button-bar">
+                        <button class="btn kanbas-btn-gray">
+                            Collapse All
+                        </button>
+                        <button class="btn kanbas-btn-gray">
+                            View Progress
+                        </button>
+                        <select
+                            class="form-select color-gray inline width-auto"
+                        >
+                            <option selected>Publish All</option>
+                        </select>
+                        <button class="btn kanbas-red-btn">+ Module</button>
+                    </div>
+
+                    <hr class="mt-2 mb-2" />
+
+                    <ul class="list-group new-module">
+                        <li class="list-group-item list-group-item-secondary">
+                            Week0- INTRO
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-plus float-end ms-3"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-caret-down float-end ms-1"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Learning Objectives
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Introduction to the Course
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Learning what is web dev
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Creating a deployment environment
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Creating a web application
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Getting started with first assignment
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Reading
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Full Stack Development Chapter-1
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Full Stack Development Chapter-2
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Slides
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            <a
+                                href="https://github.com/supratikchaudhuri/kanbas-react-web-app"
+                                class="link color-red"
+                            >
+                                <i
+                                    class="fa fa-link"
+                                    style="color: rgb(140, 138, 138)"
+                                    aria-hidden="true"
+                                ></i>
+                                Creating an HTTP server with node js
+                                <i
+                                    class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a
+                                href="https://github.com/supratikchaudhuri/kanbas-react-web-app"
+                                class="link color-red"
+                            >
+                                <i
+                                    class="fa fa-link"
+                                    style="color: rgb(140, 138, 138)"
+                                    aria-hidden="true"
+                                ></i>
+                                Creating a React Application
+                                <i
+                                    class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group new-module">
+                        <li class="list-group-item list-group-item-secondary">
+                            Week1- HTML
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-plus float-end ms-3"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-caret-down float-end ms-1"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Learning Objectives
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Learning How to Create user interfaces with HTML
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Keep Working on Assignments
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Deploy the Asssignment to Netlify
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Reading
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Full Stack Development Chapter-1
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            Full Stack Development Chapter-2
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+
+                        <li class="list-group-item sub-heading">
+                            Slides
+                            <i
+                                class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            <i
+                                class="fa fa-check-circle float-end color-green"
+                                aria-hidden="true"
+                            ></i>
+                        </li>
+                        <li class="list-group-item">
+                            <a
+                                href="https://github.com/supratikchaudhuri/kanbas-react-web-app"
+                                class="link color-red"
+                            >
+                                <i
+                                    class="fa fa-link"
+                                    style="color: rgb(140, 138, 138)"
+                                    aria-hidden="true"
+                                ></i>
+                                Creating Web Forms
+                                <i
+                                    class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a
+                                href="https://github.com/supratikchaudhuri/kanbas-react-web-app"
+                                class="link color-red"
+                            >
+                                <i
+                                    class="fa fa-link"
+                                    style="color: rgb(140, 138, 138)"
+                                    aria-hidden="true"
+                                ></i>
+                                Navigation With Anchors
+                                <i
+                                    class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a
+                                href="https://github.com/supratikchaudhuri/kanbas-react-web-app"
+                                class="link color-red"
+                            >
+                                <i
+                                    class="fa fa-link"
+                                    style="color: rgb(140, 138, 138)"
+                                    aria-hidden="true"
+                                ></i>
+                                Embedding Contents with Iframes
+                                <i
+                                    class="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col extra">
+                    <h6>Course Status</h6>
+
+                    <button class="btn kanbas-btn-gray">
+                        <i class="fa fa-ban" aria-hidden="true"></i>Unpublish
+                    </button>
+                    <button class="btn custom-green">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        Publish
+                    </button>
+
+                    <ul>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    Import Existing Content
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    Import From Commons
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    Choose Homepage
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    View Course Stream
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    New Announcements
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    New Analytics
+                                </button></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"
+                                ><button class="btn kanbas-btn-gray">
+                                    View Course Notifications
+                                </button></a
+                            >
+                        </li>
+                    </ul>
+
+                    <h6>Comming Up</h6>
+                    <hr />
+                    <ul>
+                        <li>
+                            <a class="color-red" href="#"
+                                >Lecture CS4550 Sep 7 at 11:45am</a
+                            >
+                        </li>
+                        <li>
+                            <a class="color-red" href="#"
+                                >Lecture CS4550 Sep 11 at 11:45am</a
+                            >
+                        </li>
+                        <li>
+                            <a class="color-red" href="#"
+                                >CS5610 SP23 Lecture Sep 11 at 6pm</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

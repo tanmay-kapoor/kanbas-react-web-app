@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+    .new-module {
+        max-width: 90%;
+    }
+}
+
+#image-upload::-webkit-file-upload-button {
+    padding: 5px;
+    background-color: rgb(223, 220, 220);
+    border: none;
+    cursor: pointer;
+}
+
+#image-upload {
+    border: 1px solid rgb(223, 220, 220);
+    padding: 30px 0px 30px 30px;
+    border-left:  none;
+}

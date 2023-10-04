@@ -1,0 +1,64 @@
+.new-module {
+    margin: 20px 0;
+}
+
+.new-module li {
+    padding-left: 40px;
+}
+
+.new-module li:first-child, .new-module .sub-heading {
+    font-size: 1rem;
+    padding-left: 10px;
+}
+
+.extra {
+    max-width: 250px;
+}
+
+.extra li {
+    margin-top: 6px
+}
+
+.extra .btn {
+    font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+    .extra {
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.extra ul button {
+    width: 100%;
+}
+
+.button-bar {
+    width: fit-content;
+    position: relative;
+    margin-left: auto
+}
+
+.custom-green:hover {
+    filter: brightness(90%);
+    color: white;
+}
+
+.new-module li:not(:first-child) {
+    border-left: 4px solid green;
+}
+
+.button-bar button{
+    margin: 5px 0;
+}
+
+.extra a {
+    font-size: 14px;
+}
+
+.custom-green {
+    background-color: rgb(95, 172, 95);
+    color: white;
+}

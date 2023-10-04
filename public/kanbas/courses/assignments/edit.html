@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            rel="stylesheet"
+        />
+
+        <link type="text/css" rel="stylesheet" href="../../index.css" />
+        <link type="text/css" rel="stylesheet" href="index.css" />
+
+        <title>Edit Assignment</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light xs-nav d-md-none">
+            <button
+                class="navbar-toggler color-white mt-2 mb-2"
+                data-toggle="collapse"
+                data-target="#kanbas-navigation"
+            >
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <button
+                class="navbar-toggler d-lg-none color-white"
+                data-toggle="collapse"
+                data-target="#secondary-navigation"
+            >
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div
+                class="collapse navbar-collapse dropdown-navbar"
+                id="kanbas-navigation"
+            >
+                <ul clss="navbar-nav" style="padding-left: 0">
+                    <li>
+                        <a class="color-red" href="../../profile/index.html">
+                            <i
+                                class="fa fa-user-circle mr-3 color-gray"
+                                aria-hidden="true"
+                            ></i>
+                            Account
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="../../dashboard/index.html">
+                            <i
+                                class="fa fa-tachometer mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="../home.html">
+                            <i class="fa fa-book mr-3" aria-hidden="true"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="#">
+                            <i class="fa fa-inbox mr-3" aria-hidden="true"></i>
+                            Inbox
+                        </a>
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-calendar mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Calender</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-clock mr-3"></i> History</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-computer mr-3"></i> Studio</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-right-from-bracket mr-3"
+                                aria-hidden="true"
+                            ></i
+                            >Commons</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i
+                                class="fa fa-question-circle mr-3"
+                                aria-hidden="true"
+                            ></i>
+                            Help</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                class="collapse navbar-collapse dropdown-navbar"
+                id="secondary-navigation"
+            >
+                <ul>
+                    <li>
+                        <a class="color-red" href="../home.html"
+                            ><i class="fa-solid fa-house"></i> Home</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-network-wired"></i>Modules</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Piazza</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Zoom Meetings</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="../assignments/index.html"
+                            ><i class="fa-regular fa-pen-to-square"></i
+                            >Assignments</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-rocket"></i>Quizzes</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="../grades/grades.html"
+                            ><i class="fa-regular fa-address-book"></i>Grades</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-user-group"></i>People</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-plug"></i>Panopto Video</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-comments"></i
+                            >Discussions</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-bullhorn"></i
+                            >Announcements</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-file"></i>Pages</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-folder"></i>Files</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-file-invoice"></i>Rubrics</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-bullseye"></i>Outcomes</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-regular fa-circle"></i
+                            >Collaboration</a
+                        >
+                    </li>
+                    <li>
+                        <a class="color-red" href="#"
+                            ><i class="fa-solid fa-file-lines"></i>Syllabus</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="color-red"
+                            href="../settings/course-details.html"
+                            ><i class="fa-solid fa-gear"></i>Settings</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar d-none d-md-block">
+            <ul>
+                <li>
+                    <img
+                        src="../../images/neu.png"
+                        style="max-width: 60px"
+                        alt="NEU-logo"
+                        class="neu-logo"
+                    />
+                </li>
+                <li>
+                    <a href="../../profile/index.html">
+                        <i
+                            class="fa fa-user-circle nav-avatar"
+                            aria-hidden="true"
+                        ></i>
+                        Account
+                    </a>
+                </li>
+                <li>
+                    <a href="../../dashboard/index.html">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../home.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        Courses
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-inbox" aria-hidden="true"></i>
+                        Inbox
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i class="fa fa-calendar" aria-hidden="true"></i
+                        >Calender</a
+                    >
+                </li>
+                <li>
+                    <a href="#"><i class="fa-regular fa-clock"></i>History</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-computer"></i>Studio</a>
+                </li>
+                <li>
+                    <a href="#"
+                        ><i
+                            class="fa fa-right-from-bracket"
+                            aria-hidden="true"
+                        ></i
+                        >Commons</a
+                    >
+                </li>
+                <li>
+                    <a href="#"
+                        ><i class="fa fa-question-circle" aria-hidden="true"></i
+                        >Help</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <div class="container main">
+            <div class="row root">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars color-red"></i>
+                    <nav
+                        style="--bs-breadcrumb-divider: '>'"
+                        aria-label="breadcrumb"
+                        class="ms-4"
+                    >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a class="hover-underline color-red" href="#"
+                                    >CS5610.17367.202410</a
+                                >
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a class="hover-underline color-red" href="#"
+                                    >Assignments</a
+                                >
+                            </li>
+                            <li
+                                class="breadcrumb-item black-text"
+                                aria-current="page"
+                            >
+                                A1- ENV + HTML
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <hr />
+
+                <div class="d-none d-md-block nav-2">
+                    <ul>
+                        <li>
+                            <a class="color-red" href="../home.html">Home</a>
+                        </li>
+                        <li><a class="color-red" href="#">Modules</a></li>
+                        <li><a class="color-red" href="#">Piazza</a></li>
+                        <li><a class="color-red" href="#">Zoom Meetings</a></li>
+                        <li class="active">
+                            <a href="index.html">Assignments</a>
+                        </li>
+                        <li><a class="color-red" href="#">Quizzes</a></li>
+                        <li>
+                            <a class="color-red" href="../grades/grades.html"
+                                >Grades</a
+                            >
+                        </li>
+                        <li><a class="color-red" href="#">People</a></li>
+                        <li><a class="color-red" href="#">Panopto Video</a></li>
+                        <li><a class="color-red" href="#">Discussions</a></li>
+                        <li><a class="color-red" href="#">Announcements</a></li>
+                        <li><a class="color-red" href="#">Pages</a></li>
+                        <li><a class="color-red" href="#">Files</a></li>
+                        <li><a class="color-red" href="#">Rubrics</a></li>
+                        <li><a class="color-red" href="#">Outcomes</a></li>
+                        <li><a class="color-red" href="#">Collaboration</a></li>
+                        <li><a class="color-red" href="#">Syllabus</a></li>
+                        <li>
+                            <a
+                                class="color-red"
+                                href="../settings/course-details.html"
+                                >Settings</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col edit-page">
+                    <div class="float-end">
+                        <i class="fa-solid fa-circle-check color-green"></i>
+                        <label class="ms-1 color-green">Published</label>
+                    </div>
+
+                    <hr class="mt-5" />
+
+                    <label for="ass-name">Assignment Name</label>
+                    <input
+                        id="ass-name"
+                        type="text"
+                        class="form-control mt-1"
+                        value="A1- ENV + HTML"
+                    />
+
+                    <textarea rows="5" class="form-control mt-3">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur illo inventore recusandae dolores fuga, atque labore reiciendis cupiditate harum laborum, odio fugiat obcaecati maxime. Perferendis dolorem earum quos eos magnam distinctio! Explicabo dolore itaque animi, delectus sed porro temporibus enim ad modi corporis, mollitia corrupti doloremque facere eveniet tempora.</textarea
+                    >
+
+                    <form class="edit-ass-form">
+                        <div class="form-group row">
+                            <label
+                                for="points"
+                                class="col-sm-2 col-form-label ta-right"
+                                >Points</label
+                            >
+                            <div class="col-sm-10">
+                                <input
+                                    id="points"
+                                    type="text"
+                                    readonly
+                                    class="form-control-plaintext"
+                                    value="100"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label ta-right"
+                                >Assignment Group</label
+                            >
+                            <div class="col-sm-10">
+                                <select id="ass-grp" class="form-select">
+                                    <option selected>ASSIGNMENTS</option>
+                                    <option value="1">QUIZ</option>
+                                    <option value="2">PROJECT</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label
+                                for="grade-display"
+                                class="col-sm-2 col-form-label ta-right"
+                                >Dispplay Grade As</label
+                            >
+                            <div class="col-sm-10">
+                                <select id="grade-display" class="form-select">
+                                    <option selected>PERCENTAGE</option>
+                                    <option value="1">POINTS</option>
+                                    <option value="2">PERCENTILE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="include-in-final-grade"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="include-in-final-grade"
+                                >
+                                    Do not count this assignment towards final
+                                    grade
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label ta-right"
+                                >Submission Type</label
+                            >
+                            <div class="col-sm-10 sub-type-box">
+                                <select class="form-select mb-2">
+                                    <option selected>Online</option>
+                                    <option value="1">POINTS</option>
+                                    <option value="2">PERCENTILE</option>
+                                </select>
+
+                                <h5>Online Entry Options</h5>
+
+                                <div class="entry-type">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="entry-type-text-entry"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="entry-type-text-entry"
+                                    >
+                                        Text Entry
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="entry-type-url"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="entry-type-url"
+                                    >
+                                        Website URL
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="entry-type-rec"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="entry-type-rec"
+                                    >
+                                        Media Recordings
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="entry-type-annotation"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="entry-type-annotation"
+                                    >
+                                        Student Annotations
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="entry-type-upload"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="entry-type-upload"
+                                    >
+                                        File Uploads
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label ta-right"
+                                >Assign</label
+                            >
+                            <div class="col-sm-10 sub-type-box">
+                                <select class="form-select mb-2">
+                                    <option selected>TA1</option>
+                                    <option value="1">TA2</option>
+                                    <option value="2">TA3</option>
+                                </select>
+
+                                <h5>Assign To</h5>
+
+                                <h5>Due</h5>
+                                <input
+                                    class="date-picker width-100"
+                                    type="date"
+                                />
+
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Available From</h5>
+                                        <input
+                                            class="date-picker width-100"
+                                            type="date"
+                                        />
+                                    </div>
+                                    <div class="col">
+                                        <h5>Until</h5>
+                                        <input
+                                            class="date-picker width-100"
+                                            type="date"
+                                        />
+                                    </div>
+                                </div>
+
+                                <button class="mt-3 width-100 kanbas-btn-gray">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr />
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="ass-edited-notify-users-checkbox"
+                    />
+                    <label
+                        class="form-check-label"
+                        for="ass-edited-notify-users-checkbox"
+                    >
+                        Notify users that this content has changed
+                    </label>
+                    <div class="float-end mb-5">
+                        <a href="index.html"
+                            ><button class="btn kanbas-btn-gray">
+                                Cancel
+                            </button></a
+                        >
+                        <a href="index.html"
+                            ><button class="btn kanbas-red-btn">Save</button></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
