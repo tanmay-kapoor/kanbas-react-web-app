@@ -1,0 +1,54 @@
+.custom-label {
+    line-height: 14px;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 15px;
+    border: 1px solid rgb(19, 19, 19);
+}
+.ass-box {
+    width: 100%;
+    padding-bottom: 5px;
+}
+.ass-box i {
+    font-size: 20px;
+}
+.ass-description {
+    height: auto;
+}
+.ass-description a {
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+}
+.ass-description a:hover {
+    color: black;
+    text-decoration: underline !important;
+}
+.ass-description p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.assignments li:not(:first-child) {
+    border-left: 4px solid green;
+}
+.sub-type-box select {
+    max-width: 50%;
+}
+.sub-type-box .entry-type {
+    display: block;
+}
+
+.assign-footer p {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 575px) {
+    .edit-ass-form > div > label {
+        text-align: left;
+    }
+
+    .edit-ass-form .sub-type-box {
+        width: 90%;
+    }
+}

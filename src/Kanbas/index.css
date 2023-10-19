@@ -1,0 +1,329 @@
+/* HTML Tags */
+body {
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: Helvetica;
+}
+i {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: rgb(64, 61, 61);
+}
+select{
+    font-family: 'FontAwesome 5 Free', 'Helvetica';
+}
+
+/* clead all styles in id with name root */
+#root {
+    all: unset;
+}
+
+
+/* Generic class for color/position/wiidth, etc. */
+.pos-absolute {
+    position: absolute;
+}
+.color-red {
+    color: rgb(194, 35, 35) !important;
+}
+.color-white {
+    color: white !important;
+}
+.color-green {
+    color: rgb(5, 150, 5) !important;  
+}
+.color-gray {
+    color: rgb(102, 98, 98) !important;
+}
+.color-black {
+    color: black !important;
+}
+.pointer {
+    cursor: pointer;
+}
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.width-auto{ 
+    width: auto;
+}
+.width-100 {
+    width: 100%;
+}
+.mw-40 {
+    max-width: 40%;
+}
+.height-auto {
+    height: auto;
+}
+.height-100 {
+    height: 100%;
+}
+.italics {
+    font-style: italic;
+}
+.lh-1 {
+    line-height: 1rem;
+}
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.tl-center {
+    text-align: center;
+}
+.ta-left {
+    text-align: left;
+}
+.ta-right {
+    text-align: right;
+}
+.vh-100 {
+    height: 100vh;
+}
+.kanbas-btn-gray {
+    color: rgb(102, 98, 98);
+    background-color: rgb(241, 240, 240);
+    border: 1px solid rgb(185, 181, 181);
+}
+.kanbas-btn-gray:hover {
+    color: rgb(102, 98, 98);
+    background-color: rgb(225, 225, 225);
+}
+.kanbas-red-btn {
+    color: white;
+    background-color: rgb(221, 48, 48);
+}
+.kanbas-red-btn:hover {
+    color: white;
+    background-color: rgb(221, 48, 48);
+    filter: brightness(90%);
+}
+.truncate-text {
+    white-space: nowrap;       /* Prevent text from wrapping to the next line */
+    overflow: hidden;          /* Hide any overflowing content */
+    text-overflow: ellipsis;   /* Display ellipsis (...) for truncated text */
+}
+.hover-underline:hover {
+    text-decoration: underline;
+}
+.inline {
+    display: inline;
+}
+.fit-content {
+    width: fit-content;
+}
+
+
+/* Classes */
+.neu-logo {
+    max-width: 60px !important;
+    padding: 8px 0 !important;
+}
+.main {
+    margin: 0 !important;
+    padding: 0 !important;
+    /* width: 100vw !important; */
+    width: 100% !important;
+}
+.root {
+    width: 100% !important;
+    margin-left: 95px;
+    padding-left: 20px;
+}
+.nav-avatar {
+    color: #9b9ea3 !important; 
+    font-size: 32px !important;
+}
+.main ul {
+    list-style-type: none;
+    padding: 0
+}
+.heading {
+    font-size: 2.2rem;
+    font-weight: 200;
+    margin: 15px 0;
+}
+.sub-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.kanbas-tabs li .nav-link {
+    color: rgb(194, 35, 35);
+}
+.kanbas-tabs .nav-link.active {
+    color: black;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+
+/* Sidebar for larger screens */
+.sidebar {
+    background-color: black;
+    width: 95px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 5px;
+    font-weight: 200;
+}
+.sidebar ul {
+    padding-left: 0 !important;
+}
+.sidebar li{
+    text-align: center;
+    cursor: pointer;
+    padding: 7px 0;
+}
+.sidebar i {
+    color : rgb(225, 30, 30);
+    display: block;
+    font-size: 1.5rem;
+}
+.sidebar a {
+    color : white;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+.sidebar .active {
+    background-color: white;
+}
+.sidebar .active a {
+    color: rgb(243, 37, 37);
+    font-weight: 400;
+}
+
+/* Navbar for small screens */
+.xs-nav {
+    background-color: black;
+    padding: 0 !important;
+}
+.xs-nav div {
+    width: 100%;
+    height: 100%;
+}
+#kanbas-navigation ul, #secondary-navigation ul {
+    width: 100%;
+    list-style: none;
+    background-color: white;
+    margin-bottom: 0;
+    padding: 0 0 20px 0;
+}
+#kanbas-navigation ul a, #secondary-navigation ul a {
+    text-decoration: none;
+}
+#kanbas-navigation ul li, #secondary-navigation ul li {
+    display: inline-block;
+    padding: 10px 10px 0;
+    width: 100%;
+    text-align: left;
+}
+#kanbas-navigation i, #secondary-navigation i {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+/* Nav-2 (secondary navigation) */
+.nav-2 {
+    max-width: 200px;
+    padding: 0;
+    /* margin-left: 95px;
+    padding-left: 20px; */
+}
+.nav-2 li{
+    padding: 5px 0;
+}
+.nav-2 .active {
+    border-left: 2px solid black;
+}
+.nav-2 .active a {
+    color: black;
+    font-weight: 600;
+}
+.nav-2 a {
+    margin-left: 4px;
+    width: 100%;
+    display: block;
+}
+.nav-2 a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Screen title shared between multiple pages */
+.breadcrumb {
+    margin: 12px 0 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 200;
+}
+
+
+.btn-border {
+    border: 1px solid rgb(185, 181, 181);
+}
+.btn-border:hover {
+    border: 1px solid rgb(185, 181, 181);
+    filter: brightness(90%);
+}
+.edit-page label {
+    font-size: 16px;
+}
+
+
+
+
+/* Edit Form */
+.edit-ass-form div {
+    margin-top: 5px;
+    /* color: rgb(91, 91, 91) !important; */
+}
+.edit-ass-form h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.edit-ass-form .sub-type-box {
+    border: 1px solid rgb(198, 195, 195);
+    width: 50%;
+    margin-left: 15px;
+    border-radius: 1%;
+    padding: 10px;
+}
+.edit-ass-form .date-picker {
+    border: 1px solid rgb(198, 195, 195);
+    color :gray;
+    padding: 5px;
+    border-radius: 3px;
+}
+.edit-ass-form .assign-footer {
+    width: 100%;
+    background-color: rgb(198, 195, 195);
+    text-align: center;
+    border: 1px solif gray;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .root {
+        margin: auto;
+        width: 100%;
+    }
+}

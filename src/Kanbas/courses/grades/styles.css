@@ -1,0 +1,23 @@
+.grades-table {
+    width: 100%;
+    text-align: center;
+}
+.grades-table th {
+    font-weight: 200;
+    color: black
+}
+.grades-table .student-name {
+    text-align: left;
+}
+.grades-table thead, .grades-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Apply styles to odd rows */
+}
+.grades-table th, .grades-table td {
+    padding: 7px;
+    border: 1px solid rgb(197, 193, 193);
+    width: 20%;
+}
+.grades-table td input {
+    width: 100%;
+    height: 100%;
+}
