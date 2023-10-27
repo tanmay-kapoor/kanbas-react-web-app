@@ -16,7 +16,7 @@ function KanbasNavigation() {
         },
         {
             name: "Courses",
-            path: "courses/RS101",
+            path: "courses",
             icon: "fa fa-book",
         },
         {
@@ -326,13 +326,23 @@ function KanbasNavigation() {
                                     pathname.includes(link.path) ? "active" : ""
                                 }
                             >
-                                <Link to={link.path}>
-                                    <i
-                                        className={`${link.icon} mr-3`}
-                                        aria-hidden="true"
-                                    ></i>
-                                    {link.name}
-                                </Link>
+                                {link.name === "Courses" ? (
+                                    <Link to={link.path + "/RS101"}>
+                                        <i
+                                            className={`${link.icon} mr-3`}
+                                            aria-hidden="true"
+                                        ></i>
+                                        {link.name}
+                                    </Link>
+                                ) : (
+                                    <Link to={link.path}>
+                                        <i
+                                            className={`${link.icon} mr-3`}
+                                            aria-hidden="true"
+                                        ></i>
+                                        {link.name}
+                                    </Link>
+                                )}
                             </li>
                         );
                     })}
