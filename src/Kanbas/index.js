@@ -28,7 +28,10 @@ function Kanbas() {
     };
 
     const addCourse = () => {
-        setCourses([...courses, { ...course, _id: new Date().getTime() }]);
+        setCourses([
+            ...courses,
+            { ...course, _id: new Date().getTime().toString() },
+        ]);
     };
 
     const deleteCourse = (courseId) => {

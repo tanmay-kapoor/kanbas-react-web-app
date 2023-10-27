@@ -17,13 +17,10 @@ function Assignments() {
 
     const dispatch = useDispatch();
 
-    const assignments = useSelector(
+    const allAssignments = useSelector(
         (state) => state.assignmentsReducer.assignments
     );
-
-    assignments.map((a) =>
-        a.course !== courseId ? dispatch(deleteAssignment(a._id)) : a
-    );
+    const assignments = allAssignments.filter((a) => a.course === courseId);
 
     return (
         <div class="col width-100">

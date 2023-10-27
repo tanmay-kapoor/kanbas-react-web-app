@@ -20,12 +20,10 @@ const AssignmentEditor = () => {
     const assignment = useSelector(
         (state) => state.assignmentsReducer.assignment
     );
-    const assignments = useSelector(
+    const allAssignments = useSelector(
         (state) => state.assignmentsReducer.assignments
     );
-    assignments.map((a) =>
-        a.course !== courseId ? dispatch(deleteAssignment(a._id)) : a
-    );
+    const assignments = allAssignments.filter((a) => a.course === courseId);
 
     return (
         <div className="col edit-page">

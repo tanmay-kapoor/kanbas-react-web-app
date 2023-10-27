@@ -18,12 +18,10 @@ const ModuleList = () => {
     const [showForm, setShowForm] = useState(false);
     const [formType, setFormType] = useState(null);
 
-    const modules = useSelector((state) => state.modulesReducer.modules);
+    const allModules = useSelector((state) => state.modulesReducer.modules);
     const dispatch = useDispatch();
 
-    modules.map((m) =>
-        m.course !== courseId ? dispatch(deleteModule(m._id)) : m
-    );
+    const modules = allModules.filter((m) => m.course === courseId);
 
     const displayForm = (e, { type, module }) => {
         e.preventDefault();
