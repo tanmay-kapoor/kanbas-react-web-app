@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { addModule, editModule, setModule } from "./moduleReducer";
+import { addModule, editModule, setModule } from "./modulesReducer";
 import FormTypes from "../../utils/FormTypes";
 
 function ModuleDetailsForm({ showForm, setShowForm, formType, courseId }) {
-    const module = useSelector((state) => state.moduleReducer.module);
+    const module = useSelector((state) => state.modulesReducer.module);
     const dispatch = useDispatch();
 
     const callFunc = (e, type) => {

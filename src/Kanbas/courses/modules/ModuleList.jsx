@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 
-import { deleteModule, setModule } from "./moduleReducer";
+import { deleteModule, setModule } from "./modulesReducer";
 import ModuleDetailsForm from "./ModuleDetailsForm";
 import FormTypes from "../../utils/FormTypes";
 
@@ -18,7 +18,7 @@ const ModuleList = () => {
     const [showForm, setShowForm] = useState(false);
     const [formType, setFormType] = useState(null);
 
-    const modules = useSelector((state) => state.moduleReducer.modules);
+    const modules = useSelector((state) => state.modulesReducer.modules);
     const dispatch = useDispatch();
 
     modules.map((m) =>
