@@ -12,8 +12,8 @@ const modulesSlice = createSlice({
     reducers: {
         addModule: (state, action) => {
             state.modules = [
-                { ...action.payload, _id: new Date().getTime().toString() },
                 ...state.modules,
+                { ...action.payload, _id: new Date().getTime().toString() },
             ];
         },
         deleteModule: (state, action) => {
