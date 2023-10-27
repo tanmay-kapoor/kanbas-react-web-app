@@ -1,4 +1,3 @@
-import db from "../Database/index.js";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 
 import "./styles.css";
@@ -10,9 +9,10 @@ import Assignments from "./assignemnts/index.js";
 import AssignmentEditor from "./assignemnts/AssignmentEditor.jsx";
 import Grades from "./grades/index.js";
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    console.log("courses file", courses);
+    const course = courses.find((course) => course._id === courseId);
     const curPathSplit = useParams()["*"].split("/");
 
     return (

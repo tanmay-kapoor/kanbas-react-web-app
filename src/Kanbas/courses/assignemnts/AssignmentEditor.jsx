@@ -1,10 +1,10 @@
 import { useParams } from "react-router";
-import DB from "../../Database";
+import db from "../../Database";
 
 const AssignmentEditor = () => {
     const { assignmentId } = useParams();
 
-    const { assignments } = DB;
+    const { assignments } = db;
     const assignment = assignments.find(
         (assignment) => assignment._id === assignmentId
     );

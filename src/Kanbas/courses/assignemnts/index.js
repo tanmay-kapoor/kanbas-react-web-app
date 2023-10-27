@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import DB from "../../Database/index";
+import db from "../../Database/index";
 
 import "./styles.css";
 import AssignmentEditor from "./AssignmentEditor";
 
 function Assignments() {
     const { courseId } = useParams();
-    const assignments = DB.assignments;
+    const assignments = db.assignments;
 
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId

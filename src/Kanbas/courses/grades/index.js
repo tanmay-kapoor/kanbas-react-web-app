@@ -1,13 +1,13 @@
 import { useParams } from "react-router";
-import DB from "../../Database";
+import db from "../../Database";
 import "./styles.css";
 
 const Grades = () => {
     const { courseId } = useParams();
-    const assignments = DB.assignments.filter(
+    const assignments = db.assignments.filter(
         (assignment) => assignment.course === courseId
     );
-    const enrollments = DB.enrollments.filter(
+    const enrollments = db.enrollments.filter(
         (enrollment) => enrollment.course === courseId
     );
 
@@ -84,7 +84,7 @@ const Grades = () => {
 
                     <tbody>
                         {enrollments.map((enrollment) => {
-                            const user = DB.users.find(
+                            const user = db.users.find(
                                 (user) => user._id === enrollment.user
                             );
                             return (
@@ -96,7 +96,7 @@ const Grades = () => {
                                         {user.firstName} {user.lastName}
                                     </td>
                                     {assignments.map((assignment) => {
-                                        const grade = DB.grades.find(
+                                        const grade = db.grades.find(
                                             (grade) =>
                                                 grade.student === user._id &&
                                                 grade.assignment ===
