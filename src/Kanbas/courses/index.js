@@ -5,8 +5,8 @@ import "./styles.css";
 import CourseNavigation from "./CourseNavigation.jsx";
 import Home from "./Home.jsx";
 import Modules from "./modules/index.js";
-import Assignments from "./assignemnts/index.js";
-import AssignmentEditor from "./assignemnts/AssignmentEditor.jsx";
+import Assignments from "./assignments/index.js";
+import AssignmentEditor from "./assignments/AssignmentEditor.jsx";
 import Grades from "./grades/index.js";
 
 function Courses({ courses }) {

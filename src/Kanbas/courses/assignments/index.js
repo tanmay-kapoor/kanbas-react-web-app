@@ -1,19 +1,31 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database/index";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./styles.css";
 import AssignmentEditor from "./AssignmentEditor";
+import { deleteAssignment, setAssignment } from "./assignmentsReducer";
 
 function Assignments() {
     const { courseId } = useParams();
-    const assignments = db.assignments;
 
-    const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === courseId
+    const newAssignmentDetails = {
+        title: "New Assignment",
+        description: "New Description",
+        course: courseId,
+    };
+
+    const dispatch = useDispatch();
+
+    const assignments = useSelector(
+        (state) => state.assignmentsReducer.assignments
     );
 
-    return courseAssignments.length === 0 ? (
+    assignments.map((a) =>
+        a.course !== courseId ? dispatch(deleteAssignment(a._id)) : a
+    );
+
+    return assignments.length === 0 ? (
         <div
             className="col width-100 alert alert-danger height-100"
             role="alert"
@@ -33,9 +45,17 @@ function Assignments() {
                 <div class="col">
                     <div class="float-end">
                         <button class="btn kanbas-btn-gray">+ Group</button>
-                        <button class="btn kanbas-red-btn mt-1 ms-2">
-                            + Assignment
-                        </button>
+                        <Link
+                            to={"new"}
+                            element={<AssignmentEditor />}
+                            onClick={() =>
+                                dispatch(setAssignment(newAssignmentDetails))
+                            }
+                        >
+                            <button class="btn kanbas-red-btn mt-1 ms-2">
+                                + Assignment
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -53,7 +73,7 @@ function Assignments() {
                     <label class="custom-label float-end">40% of Total</label>
                 </li>
 
-                {courseAssignments.map((assignment) => {
+                {assignments.map((assignment) => {
                     return (
                         <li class="list-group-item sub-heading">
                             <div class="d-flex ass-box align-items-center">
@@ -63,6 +83,9 @@ function Assignments() {
                                     <Link
                                         to={assignment._id}
                                         element={<AssignmentEditor />}
+                                        onClick={() => {
+                                            dispatch(setAssignment(assignment));
+                                        }}
                                     >
                                         {assignment.title}
                                     </Link>
@@ -74,6 +97,16 @@ function Assignments() {
                                 <i
                                     class="fa fa-check-circle ms-auto color-green"
                                     aria-hidden="true"
+                                ></i>
+                                <i
+                                    class="fa fa-trash float-end ms-4  color-red"
+                                    aria-hidden="true"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        dispatch(
+                                            deleteAssignment(assignment._id)
+                                        );
+                                    }}
                                 ></i>
                                 <i
                                     class="fa fa-ellipsis-v float-end ms-4  color-gray"
