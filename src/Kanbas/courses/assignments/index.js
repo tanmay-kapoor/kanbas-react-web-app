@@ -108,9 +108,17 @@ function Assignments() {
                                         aria-hidden="true"
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            dispatch(
-                                                deleteAssignment(assignment._id)
-                                            );
+                                            if (
+                                                window.confirm(
+                                                    "Are you sure you want to delete this assignment?"
+                                                )
+                                            ) {
+                                                dispatch(
+                                                    deleteAssignment(
+                                                        assignment._id
+                                                    )
+                                                );
+                                            }
                                         }}
                                     ></i>
                                     <i
