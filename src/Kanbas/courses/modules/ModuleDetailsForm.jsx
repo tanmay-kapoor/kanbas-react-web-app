@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { addModule, editModule, setModule } from "./modulesReducer";
+import { createModule, updateModule } from "./service";
+
 import FormTypes from "../../utils/FormTypes";
 
 function ModuleDetailsForm({ showForm, setShowForm, formType, courseId }) {
@@ -10,9 +12,11 @@ function ModuleDetailsForm({ showForm, setShowForm, formType, courseId }) {
     const callFunc = (e, type) => {
         e.preventDefault();
         if (type === FormTypes.Add) {
-            dispatch(addModule({ ...module, course: courseId }));
+            createModule(courseId, module).then((module) => {
+                dispatch(addModule(module));
+            });
         } else if (type === FormTypes.Edit) {
-            dispatch(editModule(module));
+            updateModule(module).then(() => dispatch(editModule(module)));
         }
         setShowForm(!showForm);
     };

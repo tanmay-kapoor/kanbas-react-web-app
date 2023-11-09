@@ -1,13 +1,25 @@
-import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
 
 import "./styles.css";
 import AssignmentEditor from "./AssignmentEditor";
-import { deleteAssignment, setAssignment } from "./assignmentsReducer";
+import {
+    setAssignments,
+    deleteAssignment,
+    setAssignment,
+} from "./assignmentsReducer";
+import { destroyAssignment, findAssignmentsForCourse } from "./service";
 
 function Assignments() {
     const { courseId } = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId).then((assignments) =>
+            dispatch(setAssignments(assignments))
+        );
+    }, [courseId]);
 
     const newAssignmentDetails = {
         title: "New Assignment",
@@ -15,12 +27,9 @@ function Assignments() {
         course: courseId,
     };
 
-    const dispatch = useDispatch();
-
-    const allAssignments = useSelector(
+    const assignments = useSelector(
         (state) => state.assignmentsReducer.assignments
     );
-    const assignments = allAssignments.filter((a) => a.course === courseId);
 
     return (
         <div class="col width-100">
@@ -113,9 +122,13 @@ function Assignments() {
                                                     "Are you sure you want to delete this assignment?"
                                                 )
                                             ) {
-                                                dispatch(
-                                                    deleteAssignment(
-                                                        assignment._id
+                                                destroyAssignment(
+                                                    assignment._id
+                                                ).then((status) =>
+                                                    dispatch(
+                                                        deleteAssignment(
+                                                            assignment._id
+                                                        )
                                                     )
                                                 );
                                             }

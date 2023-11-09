@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 
-import { deleteModule, setModule } from "./modulesReducer";
+import { setModules, deleteModule, setModule } from "./modulesReducer";
+import { findModulesForCourse, destroyModule } from "./service";
+
 import ModuleDetailsForm from "./ModuleDetailsForm";
 import FormTypes from "../../utils/FormTypes";
 
 const ModuleList = () => {
     const { courseId } = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        findModulesForCourse(courseId).then((modules) =>
+            dispatch(setModules(modules))
+        );
+    }, [courseId]);
 
     const newModuleDetails = {
         name: "New Module",
@@ -18,10 +27,7 @@ const ModuleList = () => {
     const [showForm, setShowForm] = useState(false);
     const [formType, setFormType] = useState(null);
 
-    const allModules = useSelector((state) => state.modulesReducer.modules);
-    const dispatch = useDispatch();
-
-    const modules = allModules.filter((m) => m.course === courseId);
+    const modules = useSelector((state) => state.modulesReducer.modules);
 
     const displayForm = (e, { type, module }) => {
         e.preventDefault();
@@ -109,8 +115,13 @@ const ModuleList = () => {
                                             className="fa-solid fa-trash footer-item color-red ms-2"
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                dispatch(
-                                                    deleteModule(module._id)
+                                                destroyModule(module._id).then(
+                                                    (status) =>
+                                                        dispatch(
+                                                            deleteModule(
+                                                                module._id
+                                                            )
+                                                        )
                                                 );
                                             }}
                                         ></i>

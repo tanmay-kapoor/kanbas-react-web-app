@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import {
     addAssignment,
     editAssignment,
-    deleteAssignment,
     setAssignment,
 } from "./assignmentsReducer";
+import { createAssignment, updateAssignment } from "./service";
 const { useSelector, useDispatch } = require("react-redux");
 
 const AssignmentEditor = () => {
@@ -337,9 +337,14 @@ const AssignmentEditor = () => {
                     onClick={(e) => {
                         e.preventDefault();
                         if (isExistingAssignment) {
-                            dispatch(editAssignment(assignment));
+                            updateAssignment(assignment).then(() =>
+                                dispatch(editAssignment(assignment))
+                            );
                         } else {
-                            dispatch(addAssignment(assignment));
+                            createAssignment(courseId, assignment).then(
+                                (assignment) =>
+                                    dispatch(addAssignment(assignment))
+                            );
                         }
                         navigate("../assignments");
                     }}

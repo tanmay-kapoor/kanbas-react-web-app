@@ -1,4 +1,6 @@
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import "./styles.css";
 
@@ -9,10 +11,23 @@ import Assignments from "./assignments/index.js";
 import AssignmentEditor from "./assignments/AssignmentEditor.jsx";
 import Grades from "./grades/index.js";
 
-function Courses({ courses }) {
+function Courses({ URL }) {
     const { courseId } = useParams();
-    console.log("courses file", courses);
-    const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+
+    const findCourseById = async (courseId) => {
+        try {
+            const response = await axios.get(`${URL}/${courseId}`);
+            setCourse(response.data);
+        } catch (err) {
+            alert(err.response.data.message);
+        }
+    };
+
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+
     const curPathSplit = useParams()["*"].split("/");
 
     return (
