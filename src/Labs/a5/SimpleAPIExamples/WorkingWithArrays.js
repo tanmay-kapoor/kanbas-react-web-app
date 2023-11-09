@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function WorkingWithArrays() {
     const API = "http://localhost:4000/a5/todos";
@@ -10,6 +11,83 @@ function WorkingWithArrays() {
         completed: false,
     });
 
+    const [todos, setTodos] = useState([]);
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    const fetchTodos = async () => {
+        const response = await axios.get(API);
+        setTodos(response.data);
+    };
+
+    const updateTodo = async (todo) => {
+        try {
+            const response = await axios.put(`${API}/${todo.id}`, todo);
+            setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const removeTodo = async (todo) => {
+        try {
+            const response = await axios.get(`${API}/${todo.id}/delete`);
+            setTodos(response.data);
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const deleteTodo = async (todo) => {
+        try {
+            const response = await axios.delete(`${API}/${todo.id}`);
+            setTodos(todos.filter((t) => t.id !== todo.id));
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const createTodo = async () => {
+        try {
+            const response = await axios.get(`${API}/create`);
+            setTodos(response.data);
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const fetchTodoById = async (id) => {
+        try {
+            const response = await axios.get(`${API}/${id}`);
+            setTodo(response.data);
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const updateTitle = async () => {
+        try {
+            const response = await axios.get(
+                `${API}/${todo.id}/title/${todo.title}`
+            );
+            setTodos(response.data);
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    const postTodo = async () => {
+        try {
+            const response = await axios.post(API, todo);
+            setTodos([...todos, response.data]);
+        } catch (err) {
+            setErrorMessage(err.response.data.message);
+        }
+    };
+
+    useEffect(() => {
+        fetchTodos();
+    }, []);
+
     return (
         <div>
             <h3>Working with Arrays</h3>
@@ -19,18 +97,19 @@ function WorkingWithArrays() {
                 Get Todos
             </a>
             <br />
-
             <h4>Retrieving an Item from an Array by ID</h4>
             <br />
             <input
                 className="form-control mb-2 w-75"
                 value={todo.id}
-                onChange={(e) => setTodo({ ...todo, id: e.target.value })}
+                onChange={(e) =>
+                    setTodo({ ...todo, id: parseInt(e.target.value) })
+                }
+                type="number"
             />
             <a href={`${API}/${todo.id}`} className="btn btn-primary mb-2 w-25">
                 Get Todo by ID
             </a>
-
             <h3>Filtering Array Items</h3>
             <a
                 href={`${API}/?completed=true`}
@@ -38,16 +117,16 @@ function WorkingWithArrays() {
             >
                 Get Completed Todos
             </a>
-
             <h3>Creating new Items in an Array</h3>
             <a href={`${API}/create`} className="btn btn-primary mb-2 w-25">
                 Create Todo
             </a>
-
             <h3>Deleting from an Array</h3>
             <input
                 value={todo.id}
-                onChange={(e) => setTodo({ ...todo, id: e.target.value })}
+                onChange={(e) =>
+                    setTodo({ ...todo, id: parseInt(e.target.value) })
+                }
                 className="form-control mb-2"
                 type="number"
             />
@@ -57,7 +136,6 @@ function WorkingWithArrays() {
             >
                 Delete Todo with ID = {todo.id}
             </a>
-
             <h3>Updating an Item in an Array</h3>
             <input
                 value={todo.title}
@@ -76,9 +154,106 @@ function WorkingWithArrays() {
             >
                 Update Title to <br /> {todo.title}
             </a>
-
+            <br /> <br />
+            <textarea
+                onChange={(e) =>
+                    setTodo({ ...todo, description: e.target.value })
+                }
+                value={todo.description || ""}
+                type="text"
+                class="form-control mb-2"
+                id="exampleFormControlTextarea1"
+                rows="3"
+            />
             <input
-                value={todo.description}
+                onChange={(e) =>
+                    setTodo({
+                        ...todo,
+                        due: e.target.value,
+                    })
+                }
+                value={todo.due || ""}
+                className="form-control mb-2 w-100"
+                type="date"
+            />
+            <div className="form-check">
+                <input
+                    onChange={(e) =>
+                        setTodo({
+                            ...todo,
+                            completed: e.target.checked,
+                        })
+                    }
+                    value={todo.completed}
+                    type="checkbox"
+                    className="form-check-input"
+                    id="completedCheckbox"
+                />
+                <label className="form-check-label" for="completedCheckbox">
+                    Completed
+                </label>
+            </div>
+            <br />
+            <button onClick={postTodo} className="btn btn-warning mb-2 w-25">
+                Post Todo
+            </button>
+            <br />
+            <button
+                onClick={() => updateTodo(todo)}
+                className="btn btn-info mb-2 w-25"
+            >
+                Update Todo
+            </button>
+            <br />
+            <button onClick={createTodo} className="btn btn-primary mb-2 w-25">
+                Create Todo
+            </button>
+            <br />
+            <button onClick={updateTitle} className="btn btn-success mb-2 w-25">
+                Update Title
+            </button>
+            {errorMessage && (
+                <div className="center-align alert alert-danger mb-2 mt-2 w-50">
+                    {errorMessage}
+                </div>
+            )}
+            <ul className="list-group mb-2">
+                {todos.map((todo) => (
+                    <li key={todo.id} className="list-group-item w-50">
+                        <button
+                            onClick={() => deleteTodo(todo)}
+                            className="btn btn-danger float-end"
+                        >
+                            Delete
+                        </button>
+                        <button
+                            onClick={() => fetchTodoById(todo.id)}
+                            className="btn btn-warning me-2 float-end"
+                        >
+                            Edit
+                        </button>
+                        <button
+                            onClick={() => removeTodo(todo)}
+                            className="btn btn-danger me-2 float-end"
+                        >
+                            Remove
+                        </button>
+                        <input
+                            checked={todo.completed}
+                            type="checkbox"
+                            readOnly
+                        />
+
+                        {todo.title}
+
+                        <p>{todo.description}</p>
+                        <p>{todo.due}</p>
+                    </li>
+                ))}
+            </ul>
+            <br />
+            <input
+                value={todo.description || ""}
                 onChange={(e) =>
                     setTodo({
                         ...todo,
@@ -94,7 +269,6 @@ function WorkingWithArrays() {
             >
                 Update Description to <br /> {todo.description}
             </a>
-
             <div className="form-check">
                 <input
                     checked={todo.completed}
