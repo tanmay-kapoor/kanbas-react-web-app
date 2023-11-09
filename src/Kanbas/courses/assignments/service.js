@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const ASSIGNMENTS_URL = "http://localhost:4000/api/assignments";
-const COURSES_URL = "http://localhost:4000/api/courses";
+const API_BASE = process.env.REACT_APP_API_BASE;
+const ASSIGNMENTS_URL = `${API_BASE}/api/assignments`;
+const COURSES_URL = `${API_BASE}/api/courses`;
 
 export const findAssignmentsForCourse = async (courseId) => {
     const response = await axios.get(`${COURSES_URL}/${courseId}/assignments`);
