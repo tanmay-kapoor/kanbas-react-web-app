@@ -1,15 +1,51 @@
 import { useParams } from "react-router";
-import db from "../../Database";
+import { useState, useEffect } from "react";
 import "./styles.css";
+
+import { findAssignmentsForCourse } from "../assignments/service";
+import {
+    findEnrollmentsForCourse,
+    findUserById,
+    findGradeForAssignmentAndUser,
+} from "./service";
 
 const Grades = () => {
     const { courseId } = useParams();
-    const assignments = db.assignments.filter(
-        (assignment) => assignment.course === courseId
-    );
-    const enrollments = db.enrollments.filter(
-        (enrollment) => enrollment.course === courseId
-    );
+
+    const [assignments, setAssignments] = useState([]);
+    const [enrollments, setEnrollments] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [grades, setGrades] = useState([]);
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId).then(async (assignments) => {
+            setAssignments(assignments);
+
+            const enrollments = await findEnrollmentsForCourse(courseId);
+            setEnrollments(enrollments);
+
+            Promise.all(
+                enrollments.map((enrollment) => findUserById(enrollment.user))
+            ).then((users) => {
+                setUsers(users);
+
+                Promise.all(
+                    users.map((user) =>
+                        Promise.all(
+                            assignments.map((assignment) =>
+                                findGradeForAssignmentAndUser(
+                                    assignment._id,
+                                    user._id
+                                )
+                            )
+                        )
+                    )
+                ).then((grades) => {
+                    setGrades(grades);
+                });
+            });
+        });
+    }, []);
 
     return (
         <div className="col width-auto">
@@ -62,7 +98,9 @@ const Grades = () => {
                 </button>
             </form>
 
-            {assignments.length === 0 ? (
+            {assignments.length === 0 ||
+            enrollments.length !== users.length ||
+            grades.length !== users.length ? (
                 <div className="col width-100 alert alert-danger" role="alert">
                     No grades available
                 </div>
@@ -83,10 +121,9 @@ const Grades = () => {
                     </thead>
 
                     <tbody>
-                        {enrollments.map((enrollment) => {
-                            const user = db.users.find(
-                                (user) => user._id === enrollment.user
-                            );
+                        {enrollments.map((enrollment, i) => {
+                            const user = users[i];
+
                             return (
                                 <tr>
                                     <td
@@ -95,13 +132,8 @@ const Grades = () => {
                                     >
                                         {user.firstName} {user.lastName}
                                     </td>
-                                    {assignments.map((assignment) => {
-                                        const grade = db.grades.find(
-                                            (grade) =>
-                                                grade.student === user._id &&
-                                                grade.assignment ===
-                                                    assignment._id
-                                        );
+                                    {assignments.map((assignment, j) => {
+                                        const grade = grades[i][j];
                                         return (
                                             <td valign="top">
                                                 {grade?.grade || "-"}
