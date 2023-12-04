@@ -3,7 +3,7 @@ import * as client from "./client";
 function Signup() {
     const [error, setError] = useState(null);
     const [credentials, setCredentials] = useState({
-        username: "rik",
+        username: "tk",
         password: "12345",
     });
 

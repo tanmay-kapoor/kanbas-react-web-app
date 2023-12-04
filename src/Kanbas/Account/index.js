@@ -63,6 +63,10 @@ const Account = () => {
                         {!user || user !== "" ? (
                             <>
                                 <Route
+                                    path="/"
+                                    element={<Navigate to="profile" />}
+                                />
+                                <Route
                                     path="profile"
                                     element={<Profile user={user} />}
                                 />

@@ -8,7 +8,7 @@ const AccountNavigation = () => {
                     </a>
                 </li>
                 <li className="active">
-                    <a href="index.html">Profile</a>
+                    <a href="/kanbas/account/profile">Profile</a>
                 </li>
                 <li>
                     <a className="color-red" href=".">
