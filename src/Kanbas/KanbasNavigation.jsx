@@ -10,6 +10,11 @@ function KanbasNavigation() {
             icon: "fa fa-user-circle color-gray nav-avatar",
         },
         {
+            name: "Users",
+            path: "admin/users",
+            icon: "fa fa-users-line",
+        },
+        {
             name: "Dashboard",
             path: "dashboard",
             icon: "fa fa-tachometer",

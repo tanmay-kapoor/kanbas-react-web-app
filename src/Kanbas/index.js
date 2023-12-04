@@ -8,11 +8,15 @@ import Dashboard from "./dashboard";
 import Courses from "./courses";
 import Account from "./Account";
 import store from "./store";
+import Signin from "./Account/users/signin";
+import UsersTable from "./Account/users/UsersTable";
+import Signup from "./Account/users/Signup";
+import UserProfile from "./Account/users/UserProfile";
 
 import "./index.css";
 
 function Kanbas() {
-    const API_BASE = process.env.REACT_APP_API_BASE;
+    const API_BASE = process.env.REACT_APP_API_BASE_URL;
     console.log(API_BASE);
     const URL = `${API_BASE}/api/courses`;
     const findAllCourses = async () => {
@@ -81,6 +85,13 @@ function Kanbas() {
                             path="courses/:courseId/*"
                             element={<Courses URL={URL} />}
                         />
+
+                        <Route path="/signin" element={<Signin />} />
+                        <Route path="/signup" element={<Signup />} />
+
+                        <Route path="/user/:userId" element={<UserProfile />} />
+
+                        <Route path="/admin/users" element={<UsersTable />} />
                     </Routes>
                 </div>
             </div>

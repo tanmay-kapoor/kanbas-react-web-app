@@ -12,8 +12,7 @@ function App() {
         // <HashRouter>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Navigate to="/labs" />} />
-                <Route path="/labs" element={<Labs />} />
+                <Route path="/" element={<Navigate to="/kanbas/account" />} />
                 <Route path="/hello" element={<HelloWorld />} />
                 <Route path="/labs/*" element={<Labs />} />
                 <Route path="/kanbas/*" element={<Kanbas />} />
