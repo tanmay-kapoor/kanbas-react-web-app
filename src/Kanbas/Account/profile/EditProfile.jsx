@@ -154,7 +154,6 @@ const EditProfile = ({ user }) => {
                                 Password:
                             </label>
                             <input
-                                disabled
                                 type="password"
                                 className="form-control"
                                 id="password-input"
